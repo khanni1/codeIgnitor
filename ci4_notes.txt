@@ -10,6 +10,24 @@ extension=zip
 -------------------------------------------------------------
 composer create-project codeigniter4/appstarter pro_name
 
+-------------------------------------------------------------
+.env
+
+# Before
+# app.baseURL = ''
+
+# After
+app.baseURL = 'http://localhost/fci4/public/'
+
+# Before
+# CI_ENVIRONMENT = production
+
+# After
+CI_ENVIRONMENT = development
+
+the latter for debugging ease in dev mode
+-------------------------------------------------------------
+
 
 gpt 
 The second one is still real learning. It’s basically having a very fast tutor.
