@@ -1,0 +1,391 @@
+"C:\xampp\php\php.ini" path
+
+;extension=intl
+;extension=zip
+
+make it :-
+
+extension=intl
+extension=zip
+-------------------------------------------------------------
+composer create-project codeigniter4/appstarter pro_name
+
+-------------------------------------------------------------
+.env
+
+# Before
+# app.baseURL = ''
+
+# After
+app.baseURL = 'http://localhost/fci4/public/'
+
+# Before
+# CI_ENVIRONMENT = production
+
+# After
+CI_ENVIRONMENT = development
+
+the latter for debugging ease in dev mode
+-------------------------------------------------------------
+
+
+gpt 
+The second one is still real learning. It’s basically having a very fast tutor.
+
+A lot of people romanticize “manual suffering” like struggle itself guarantees mastery. It doesn’t.
+
+If someone spends 6 hours digging through scattered docs and learns one concept, and someone else spends 45 minutes using AI to understand the same concept deeply and then practices it — the second person usually learns faster.
+
+-------------------------------------------------------------------------------
+
+If you already know some Django, then learning CodeIgniter becomes much easier because both follow MVC concepts.
+
+Here’s the Django → CodeIgniter mapping first:
+
+| Django                | CodeIgniter 4           |
+| --------------------- | ----------------------- |
+| urls.py             | app/Config/Routes.php |
+| views.py            | app/Controllers/      |
+| models.py           | app/Models/           |
+| templates/          | app/Views/            |
+| settings.py         | app/Config/ + .env  |
+| manage.py runserver | php spark serve       |
+
+---
+
+# 1. Create Project
+
+bash id="k0q9kl"
+composer create-project codeigniter4/appstarter myapp
+
+
+Go inside:
+
+bash id="0o7cxg"
+cd myapp
+
+
+Run server:
+
+bash id="54v50q"
+php spark serve
+
+
+Open:
+
+text
+http://localhost:8080
+
+
+---
+
+# 2. Folder Structure
+
+Main folders:
+
+text
+app/
+ ├── Controllers/
+ ├── Models/
+ ├── Views/
+ ├── Config/
+public/
+writable/
+
+
+---
+
+# 3. URLs (like urls.py)
+
+File:
+
+text
+app/Config/Routes.php
+
+
+Example:
+
+php
+$routes->get('/', 'Home::index');
+$routes->get('/about', 'Home::about');
+
+
+Meaning:
+
+* / → calls Home controller index() method
+* /about → calls about() method
+
+---
+
+# 4. Views / Controllers (like views.py)
+
+Create:
+
+text
+app/Controllers/Home.php
+
+
+php
+<?php
+
+namespace App\Controllers;
+
+class Home extends BaseController
+{
+    public function index()
+    {
+        return "Hello World";
+    }
+
+    public function about()
+    {
+        return "About Page";
+    }
+}
+
+
+Now:
+
+* localhost:8080/
+* localhost:8080/about
+
+---
+
+# 5. Templates / Views Folder
+
+Django:
+
+text
+templates/
+
+
+CodeIgniter:
+
+text
+app/Views/
+
+
+Create:
+
+text
+app/Views/home.php
+
+
+php
+<h1>Hello from View File</h1>
+
+
+Controller:
+
+php
+public function index()
+{
+    return view('home');
+}
+
+
+---
+
+# 6. Passing Data to Templates
+
+Controller:
+
+php
+public function index()
+{
+    $data = [
+        'name' => 'Khanjan',
+        'city' => 'Ahmedabad'
+    ];
+
+    return view('home', $data);
+}
+
+
+View (home.php):
+
+php
+<h1><?= $name ?></h1>
+<p><?= $city ?></p>
+
+
+<?= ?> is short PHP echo syntax.
+
+---
+
+# 7. Models (like models.py)
+
+Create:
+
+text
+app/Models/StudentModel.php
+
+
+php
+<?php
+
+namespace App\Models;
+
+use CodeIgniter\Model;
+
+class StudentModel extends Model
+{
+    protected $table = 'students';
+
+    protected $allowedFields = ['name', 'email'];
+}
+
+
+Use model in controller:
+
+php
+use App\Models\StudentModel;
+
+public function students()
+{
+    $model = new StudentModel();
+
+    $data['students'] = $model->findAll();
+
+    return view('students', $data);
+}
+
+
+---
+
+# 8. Database Configuration
+
+Django:
+
+python
+DATABASES = {}
+
+
+CodeIgniter:
+
+text
+.env
+
+
+Uncomment/edit:
+
+env
+database.default.hostname = localhost
+database.default.database = mydb
+database.default.username = root
+database.default.password =
+database.default.DBDriver = MySQLi
+
+
+---
+
+# 9. HTML + PHP Together
+
+Unlike Django templates, CodeIgniter views are basically PHP files.
+
+Example:
+
+php
+<?php foreach($students as $s): ?>
+
+<h2><?= $s['name'] ?></h2>
+
+<?php endforeach; ?>
+
+
+---
+
+# 10. Forms
+
+Route:
+
+php
+$routes->get('/contact', 'Home::contact');
+$routes->post('/submit', 'Home::submit');
+
+
+Controller:
+
+php
+public function contact()
+{
+    return view('contact');
+}
+
+public function submit()
+{
+    $name = $this->request->getPost('name');
+
+    return $name;
+}
+
+
+View:
+
+html
+<form method="post" action="/submit">
+
+<input type="text" name="name">
+
+<button type="submit">Send</button>
+
+</form>
+
+
+---
+
+# 11. Helpful Commands
+
+Run server:
+
+bash id="1x6y0n"
+php spark serve
+
+
+Create controller:
+
+bash id="snc90r"
+php spark make:controller Home
+
+
+Create model:
+
+bash id="11b1o7"
+php spark make:model StudentModel
+
+
+---
+
+# Best Beginner Path
+
+Learn in this order:
+
+1. Routes
+2. Controllers
+3. Views
+4. Passing data
+5. Forms
+6. Database connection
+7. Models
+8. CRUD app
+
+After that, try making:
+
+* Todo app
+* Student management
+* Notes app
+
+Those teach almost everything basic in MVC.
+--------------------------------------------------
+recommended structure
+app/
+ └── Views/
+      ├── home.php
+      ├── about.php
+
+public/
+ ├── css/
+ ├── js/
+ ├── images/
+
+
