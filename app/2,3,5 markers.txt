@@ -1,0 +1,99 @@
+2 Marker Questions
+
+1. What is CodeIgniter?
+mvc based php framework that allows users to 
+structured simplistic secure and speed websites build
+
+2. List any two features of CodeIgniter.
+light weight and fast
+secure (common attacks)
+no heavy configuration
+
+3. What is MVC architecture in CodeIgniter?
+model - handles database (data logic)
+view -  handles ui (HTML design)
+controller - connects model and view
+
+4. What is the use of controllers in CodeIgniter?
+to connect the model data logic to frontend ui view html design
+
+5. Define routing in CodeIgniter.
+URI Routing associates a URI with a controller’s method.
+
+6. What is a helper in CodeIgniter?
+Helpers store collections of standalone functions
+
+7. What is the purpose of models in CodeIgniter?
+handles the database logic to CRUD data in associated debugging
+
+8. What is the use of views in CodeIgniter?
+9. Explain the role of `base_url()` function.
+10. What is autoloading in CodeIgniter?
+11. What is a library in CodeIgniter?
+12. Differentiate between helper and library.
+13. What is session management in CodeIgniter?
+14. What is the use of database configuration file?
+15. What is Query Builder in CodeIgniter?
+16. What is form validation in CodeIgniter?
+17. Explain URI routing in CodeIgniter.
+18. What is the use of `.env` file in CodeIgniter 4?
+19. What is CSRF protection in CodeIgniter?
+20. What is the purpose of migration in CodeIgniter?
+21. Define middleware/filter in CodeIgniter 4.
+22. What is the use of pagination in CodeIgniter?
+23. What is RESTful API in CodeIgniter?
+24. What is the purpose of `index.php` in CodeIgniter?
+25. Explain flashdata in sessions.
+
+3 Marker Questions
+
+1. Explain MVC architecture with diagram.
+done up
+
+2. Describe the folder structure of CodeIgniter.
+3. Explain how routing works in CodeIgniter.
+4. Write steps to create a controller in CodeIgniter.
+5. Explain database connectivity in CodeIgniter.
+6. Describe the process of loading views.
+7. Explain helpers and their types.
+8. Describe session handling in CodeIgniter.
+9. Explain form validation with an example.
+10. Write short notes on Query Builder Class.
+11. Explain GET and POST methods in CodeIgniter.
+12. Describe the working of models with example.
+13. Explain error handling in CodeIgniter.
+14. Describe file uploading process in CodeIgniter.
+15. Explain URL generation functions in CodeIgniter.
+16. Explain the use of hooks in CodeIgniter.
+17. Differentiate between CodeIgniter 3 and CodeIgniter 4.
+18. Explain pagination with suitable example.
+19. Describe migration and seeding in CodeIgniter 4.
+20. Explain filters in CodeIgniter 4.
+21. Explain CRUD operations in CodeIgniter.
+22. Write a note on security features of CodeIgniter.
+23. Explain template rendering in CodeIgniter.
+24. Describe how authentication can be implemented.
+25. Explain REST API development in CodeIgniter.
+
+5 Marker Questions
+
+1. Explain MVC architecture in detail with suitable example.
+2. Discuss the complete lifecycle of a request in CodeIgniter.
+3. Explain database operations (CRUD) in CodeIgniter with code example.
+4. Describe session management and authentication in CodeIgniter.
+5. Explain form validation and security mechanisms in CodeIgniter.
+6. Discuss routing techniques in CodeIgniter with examples.
+7. Explain helpers, libraries, and plugins in detail.
+8. Describe file upload and image manipulation in CodeIgniter.
+9. Explain Query Builder Class and its advantages.
+10. Compare CodeIgniter with other PHP frameworks.
+11. Explain RESTful API creation in CodeIgniter with example.
+12. Describe migration and database seeding process.
+13. Explain error handling and debugging techniques in CodeIgniter.
+14. Discuss the security features provided by CodeIgniter framework.
+15. Explain pagination implementation with example.
+16. Describe how to create and use custom helpers and libraries.
+17. Explain template engine integration in CodeIgniter.
+18. Discuss CodeIgniter 4 architecture and new features.
+19. Explain filters and middleware with suitable example.
+20. Develop a simple login and registration module using CodeIgniter.
